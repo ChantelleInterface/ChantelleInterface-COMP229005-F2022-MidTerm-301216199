@@ -1,3 +1,8 @@
+// Student name: Chantelle Lawson
+// Student number: 301216199
+// Assignment Due Date: October 29th 2022
+// Filename: user.js
+
 let User = require('../models/user');
 let passport = require('passport');
 
