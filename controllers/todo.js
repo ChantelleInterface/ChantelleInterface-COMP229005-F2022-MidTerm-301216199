@@ -38,7 +38,8 @@ module.exports.details = (req, res, next) => {
             //show the edit view
             res.render('todo/details', {
                 title: 'To-Do Details', 
-                todo: todoToShow
+                todo: todoToShow,
+                userName: req.user ? req.user.username : ''
             })
         }
     });
@@ -79,7 +80,8 @@ module.exports.processEditPage = (req, res, next) => {
         _id: req.body.id,
         task: req.body.task,
         description: req.body.description,
-        complete: req.body.complete ? true : false
+        complete: req.body.complete ? true : false,
+        userName: req.user ? req.user.username : ''
     });
 
     // ADD YOUR CODE HERE
@@ -127,7 +129,8 @@ module.exports.displayAddPage = (req, res, next) => {
 
     res.render('todo/add_edit', {
         title: 'Add a new Todo',
-        todo: newTodo
+        todo: newTodo,
+        userName: req.user ? req.user.username : ''
     })          
 
 }
@@ -141,7 +144,8 @@ module.exports.processAddPage = (req, res, next) => {
         _id: req.body.id,
         task: req.body.task,
         description: req.body.description,
-        complete: req.body.complete ? true : false
+        complete: req.body.complete ? true : false,
+        userName: req.user ? req.user.username : ''
     });
 
     // ADD YOUR CODE HERE
