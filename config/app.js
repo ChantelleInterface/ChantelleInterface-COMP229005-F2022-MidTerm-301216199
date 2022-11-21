@@ -17,6 +17,7 @@ let passport = require('passport');
 
 let app = express();
 
+//enables access to session
 app.use(session({
   saveUninitialized: true,
   resave: true,
